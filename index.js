@@ -1,16 +1,7 @@
-let app = require('./config/server');
-
-app.get('/', (req, res) => {
-    res.render('home/index');
-});
-
-app.get('/form_noticia', (req, res) => {
-    res.render('admin/form_add_noticia');
-});
-
-app.get('/noticias', (req, res) => {
-    res.render('noticias/noticias');
-});
+const app = require('./config/server');
+const rotaNoticias = require('./app/routes/noticias')(app);
+const rotaForm = require('./app/routes/form_noticia')(app);
+const rotaHome = require('./app/routes/home')(app);
 
 app.listen(3000, () => {
     console.log('Servidor rodando...');
