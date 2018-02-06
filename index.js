@@ -1,4 +1,7 @@
 const app = require('./config/server');
+const consign = require('consign');
+
+
 const rotaNoticias = require('./app/routes/noticias')(app);
 const rotaForm = require('./app/routes/form_noticia')(app);
 const rotaHome = require('./app/routes/home')(app);
