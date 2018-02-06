@@ -1,10 +1,14 @@
 const mysql = require('mysql');
 
-module.exports = () => {
+let conMySQL = () => {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: 'root',
         database: 'Noticias'
     });
-}
+};
+
+module.exports = () => {
+    return conMySQL;
+};
